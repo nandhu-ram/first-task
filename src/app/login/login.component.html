@@ -1,0 +1,62 @@
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+<style>
+ 
+  
+  
+.content {
+  font-style:italic;
+  font-size: 16px;
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  max-height: fit-content;
+  flex-direction: column;
+  align-items: center;
+}
+.nan {
+  background-color: #4CAF50;
+  border: none;
+  color: rgb(51, 26, 139);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration:rgb(3, 40, 73);
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+</style>
+<div class=content>
+<h1 style="font-size:60px;">simple task!</h1>
+<form>
+  <label>Textbox</label>  <input type="text" name="textbox" placeholder="type" (input)="update($event)">
+   <br>
+   <p>{{comp}}</p>
+</form>
+<br>
+
+<p>simple-todo</p>	
+	<div class=na>
+
+	<label>Enter the task</label>		<input [(ngModel)]="newTask" type="text"
+					value="" style="width:300px;">
+        
+		<div class=nan>	<button (click)="addToList()">
+			ADD
+			</button></div>
+		</div>
+
+		
+	<div *ngFor="let x of items; let index = index;"
+			 style="height:100px;">
+       
+
+			<p>{{x}}</p> <div class=nan>	<input (click)="deleteTask(index)" type="button"
+				value="Delete"></div>
+		
+		
+		
+	</div>
+</div>
